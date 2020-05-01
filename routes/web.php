@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*Start admin routes*/
+Route::get('/admin/login', 'Admin\AdminLoginController@index')->name('admin.login');
+Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
+/*End admin routes*/
+
 Route::get('/', 'HomeController@index')->name('home.page');
