@@ -19,3 +19,8 @@ Route::get('/admin/dashboard', 'Admin\DashboardController@index')->name('admin.d
 /*End admin routes*/
 
 Route::get('/', 'HomeController@index')->name('home.page');
+
+Route::prefix('admin')->namespace('Admin')->group(function (){
+    Route::get('/registration', 'UserController@registration')->name('admin.registration');
+    Route::post('/employee/store', 'UserController@storeEmployee')->name('store.employee');
+});
